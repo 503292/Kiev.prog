@@ -1,35 +1,50 @@
 package lesson3.task1;
 
+
 public class Main {
 	public static void main(String[] args) {
-		Group gogo = new Group();
+		Group go = new Group("FBI - 17");
+
 		
-		Student st1 = new Student("Petro", 23);
-		Student st2 = new Student("Inna", 20);
-		Student st3 = new Student("Maxym", 21);
-		Student st4 = new Student("Sergiy", 29);
-		Student st5 = new Student("Pavel", 23);
-		Student st6 = new Student("Taras", 28);
-		Student st7 = new Student("Scot", 21);
-		Student st8 = new Student("Bilbo", 24);
-		Student st9 = new Student("Garik", 24);
-		Student st10 = new Student("Eva", 25);
-		Student st11 = new Student("Sheldon", 30);
-	
-		gogo.addStudent(st1);
-		gogo.addStudent(st2);
-		gogo.addStudent(st3);
-		gogo.addStudent(st4);
-		gogo.addStudent(st5);
-		gogo.addStudent(st6);
-		gogo.addStudent(st7);
-		gogo.addStudent(st8);
-		gogo.addStudent(st9);
-		gogo.addStudent(st10);
-		gogo.delStudent(0);
-		gogo.addStudent(st11);
-	
+		// Добавляєм 10 студентів
+		try {
+			go.addStudent(new Student("Petro", "Ivanov", 20, true, 3030, "FBI - 18"));
+			go.addStudent(new Student("Inna", "Popova", 20, false, 1111, "FBI - 18"));
+			go.addStudent(new Student("Maxym", "Iv", 21, true, 2222, "FBI - 18"));
+			go.addStudent(new Student("Sergiy", "Cho", 29, true, 3333, "FBI - 18"));
+			go.addStudent(new Student("Pavel", "Sho", 23, true, 4444, "FBI - 18"));
+			go.addStudent(new Student("Taras", "Div", 28, true, 5555, "FBI - 18"));
+			go.addStudent(new Student("Scot", "Moon", 21, true, 6666, "FBI - 18"));
+			go.addStudent(new Student("Bilbo", "Boo", 24, true, 7777, "FBI - 18"));
+			go.addStudent(new Student("Garik", "Shmel", 24, true, 8888, "FBI - 18"));
+			go.addStudent(new Student("Eva", "Braun", 25, false, 2121, "FBI - 18"));	
+		} catch (fullGroupException e) {
+			System.out.println(e.getMessage());
+		}
 		
-		System.out.println(gogo);
+		// Виводим список групи
+		System.out.println(go);
+		
+		// удаляєм студента по номеру заліковки 7777
+		go.delStudent(7777);
+	
+		// Добавляєм 1-го студента на пусте місце
+		try {
+		go.addStudent(new Student("Sheldon", "Cupper", 30, true, 1010, "FBI - 18"));
+		}catch(fullGroupException e) {
+			System.out.println(e.getMessage());
+		}
+		// Виводим список групи
+		System.out.println(go);
+		
+		
+		//Шукаєм студента в списку по прізвищу
+		Student st = go.findStudent("Boo");  // цей студент був видалений 7777
+		Student st1  = go.findStudent("Shmel");
+		
+		//Виводим на екран результат пошуку
+		System.out.println(st);
+		System.out.println(st1);
+		
 	}
 }

@@ -1,45 +1,40 @@
 package lesson3.task1;
 
 public class Student extends Human {
-	
-	private String name;
-	private int age;
 
-	public Student(String name, int age) {
-		super();
-		this.name = name;
-		this.age = age;
+	private int zachotka;
+	private String group;
+
+	public Student(String name, String lastName, int age, boolean sex, int zachotka, String group) {
+		super(name, lastName, age, sex);
+		this.zachotka = zachotka;
+		this.group = group;
 	}
 
 	public Student() {
 		super();
 	}
 
-	public String getName() {
-		return name;
+	public int getZachotka() {
+		return zachotka;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setZachotka(int zachotka) {
+		this.zachotka = zachotka;
 	}
 
-	public int getAge() {
-		return age;
+	public String getGroup() {
+		return group;
 	}
 
-	public void setAge(int age) {
-		this.age = age;
-	}
-
-	@Override
-	public void getInfoHuman() {
-		System.out.println("Student " + this.name + " " + this.age);
-
+	public void setGroup(String group) {
+		this.group = group;
 	}
 
 	@Override
 	public String toString() {
-		return "\n \r [name=" + name + ", age=" + age + "]";
+		return "Student [zach = " + zachotka + ", group = " + group + super.toString();
 	}
+	
 
 }
