@@ -24,6 +24,9 @@ public class Group {
 	public void setGroupName(String groupName) {
 		this.groupName = groupName;
 	}
+	
+
+	
 
 	public void addStudent(Student student) throws fullGroupException {
 		if (student == null) {
