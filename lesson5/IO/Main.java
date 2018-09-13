@@ -9,7 +9,7 @@ public class Main {
 
 
 		File fileIn = new File("a.txt");
-		File fileOut = new File(fileIn.getName());
+		File fileOut = new File(fileIn.getName() + "ghj");
 		
 		try {
 			StreamWork.fileToFileCopy(fileIn, fileOut);
