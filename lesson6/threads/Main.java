@@ -17,9 +17,9 @@ public class Main {
 		thread2.start();
 		thread3.start();
 		
-		thread1.interrupt();  //перевод з false на true
-		thread2.interrupt();
-		thread3.interrupt();
+		//thread1.interrupt();  //перевод з false на true
+		//thread2.interrupt();
+		//thread3.interrupt();
 		
 		// зупиняє main поки не закінчятся потоки
 //		try {
@@ -37,6 +37,9 @@ public class Main {
 	}
 	
 	int proc = Runtime.getRuntime().availableProcessors();
+
+
+	
 	
 	
 
