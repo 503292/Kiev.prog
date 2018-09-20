@@ -19,7 +19,6 @@ public class Voiger {
 			} catch (InterruptedException e) {
 
 			}
-
 		}
 
 		System.out.println(text + " - ");
