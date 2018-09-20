@@ -1,24 +1,17 @@
 package lesson7.Increamenator;
 
 class Incremenator extends Thread {
-	
 	private volatile boolean mIsIncrement = true;
-	private volatile boolean mFinish = false;
 
 	public void changeAction() // Меняет действие на противоположное
 	{
 		mIsIncrement = !mIsIncrement;
 	}
 
-	public void finish() // Инициирует завершение потока
-	{
-		mFinish = true;
-	}
-
 	@Override
 	public void run() {
 		do {
-			if (!mFinish) // Проверка на необходимость завершения
+			if (!Thread.interrupted()) // Проверка прерывания
 			{
 				if (mIsIncrement)
 					Program.mValue++; // Инкремент
@@ -33,12 +26,13 @@ class Incremenator extends Thread {
 			try {
 				Thread.sleep(1000); // Приостановка потока на 1 сек.
 			} catch (InterruptedException e) {
+				return; // Завершение потока после прерывания
 			}
 		} while (true);
 	}
 }
 
-public class Program {
+class Program {
 	// Переменая, которой оперирует инкременатор
 	public static int mValue = 0;
 
@@ -62,6 +56,6 @@ public class Program {
 			mInc.changeAction(); // Переключение действия
 		}
 
-		mInc.finish(); // Инициация завершения побочного потока
+		mInc.interrupt(); // Прерывание побочного потока
 	}
 }
