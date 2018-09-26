@@ -1,6 +1,7 @@
 package lesson9.Collection.ListTask1;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 
@@ -13,6 +14,10 @@ public class Main {
 		System.out.println(myList);
 
 		changeList(myList);
+		System.out.println(myList);
+		
+		//Cортування типу
+		Collections.sort(myList);
 		System.out.println(myList);
 		
 
