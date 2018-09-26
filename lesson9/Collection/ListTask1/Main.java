@@ -16,7 +16,7 @@ public class Main {
 		changeList(myList);
 		System.out.println(myList);
 		
-		//Cортування типу
+		//Cортування через  Collections
 		Collections.sort(myList);
 		System.out.println(myList);
 		
