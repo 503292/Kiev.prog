@@ -33,7 +33,7 @@ public class Main {
 		myList.remove(2);
 		System.out.println(myList);
 	
-		//перезаписати даны по індексу
+		//перезаписати дані по індексу
 		myList.set(0, "One");
 		System.out.println(myList);
 		
