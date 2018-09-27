@@ -56,8 +56,11 @@ public class Group implements Voencom, Serializable {
 		}
 		if (students.size() >= MAX_GROUP_SIZE) {
 			throw new fullGroupException();
-		}
+		}else {
 		students.add(student);
+		}
+
+		
 	}
 
 	public Student search(String lastName) {
