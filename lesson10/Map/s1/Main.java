@@ -1,5 +1,6 @@
 package lesson10.Map.s1;
 
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
@@ -16,6 +17,10 @@ public class Main {
 		myMap.put(1, "one");
 
 		System.out.println(myMap);
+		
+		Set<Map.Entry<Integer, String>> set = myMap.entrySet();
+		for(Map.Entry<Integer, String>entry : set)
+			System.out.println(entry.getKey() + "  = " + entry.getValue());
 
 		// виведення значення по ключу
 		String text = myMap.get(5);
@@ -26,6 +31,10 @@ public class Main {
 		for (Integer key : keys) {
 			System.out.println(key + " -> " + myMap.get(key));
 		}
+		//виводить скільки разів значення повторялось по ключю;
+		System.out.println(Collections.frequency(keys, 5));
+		
+		
 		// виведення набора ключів
 		System.out.println(keys);
 
