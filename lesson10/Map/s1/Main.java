@@ -18,6 +18,8 @@ public class Main {
 
 		System.out.println(myMap);
 		
+		
+		// виклик списока пар
 		Set<Map.Entry<Integer, String>> set = myMap.entrySet();
 		for(Map.Entry<Integer, String>entry : set)
 			System.out.println(entry.getKey() + "  = " + entry.getValue());
